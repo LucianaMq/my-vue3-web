@@ -16,7 +16,9 @@
     "paths": {
       // 路径映射，相对于baseUrl
       "@/*": ["src/*"]
-    }
+    },
+    // vite/client解决import.meta找不到的ts错误
+    "types": ["vite/client"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [

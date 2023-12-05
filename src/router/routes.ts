@@ -4,7 +4,7 @@ export const constantRoute = [
     //登录
     path: '/login',
     component: () => import('@/views/login/index.vue'),
-    name: 'login',
+    name: 'login', // 路由命名
     meta: {
       title: '登录', //菜单标题
       hidden: true, //代表路由标题在菜单中是否隐藏  true:隐藏 false:不隐藏
@@ -14,7 +14,8 @@ export const constantRoute = [
   {
     //登录成功以后展示数据的路由
     path: '/',
-    component: () => import('@/layout/index.vue'),
+    // component: () => import('@/layout/index.vue'),
+    component: () => import('@/views/home/index.vue'),
     name: 'layout',
     meta: {
       title: '',

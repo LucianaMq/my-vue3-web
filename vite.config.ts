@@ -8,7 +8,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { viteMockServe } from 'vite-plugin-mock'
 export default defineConfig(({ command, mode }) => {
   //获取各种环境下的对应的变量
-  let env = loadEnv(mode, process.cwd())
+  const env = loadEnv(mode, process.cwd())
   return {
     plugins: [
       vue(),
@@ -17,7 +17,7 @@ export default defineConfig(({ command, mode }) => {
         symbolId: 'icon-[dir]-[name]',
       }),
       viteMockServe({
-        enable: command === 'serve', // 保证开发阶段可以使用mock接口
+        localEnabled: command === 'serve', // 保证开发阶段可以使用mock接口
       }),
     ],
     resolve: {
